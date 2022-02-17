@@ -20,7 +20,7 @@ public class MineopolyMain {
 
     public static void main(String[] args) {
         if (TEST_STRATEGY_WIN_PERCENT) {
-            MinePlayerStrategy yourStrategy = new RandomStrategy(); // TODO: Replace this with your strategy
+            MinePlayerStrategy yourStrategy = new PlayerStrategy(); // TODO: Replace this with your strategy
             int[] assignmentBoardSizes = new int[]{14, 20, 26, 32};
 
             for (int testBoardSize : assignmentBoardSizes) {
@@ -37,7 +37,7 @@ public class MineopolyMain {
         final GameEngine gameEngine;
         if (savedReplayFilePath == null) {
             // Not viewing a replay, play a game with a GUI instead
-            MinePlayerStrategy redStrategy = new RandomStrategy(); // TODO: Replace this with your strategy
+            MinePlayerStrategy redStrategy = new PlayerStrategy(); // TODO: Replace this with your strategy
             MinePlayerStrategy blueStrategy = new RandomStrategy();
             long randomSeed = System.currentTimeMillis();
             gameEngine = new GameEngine(DEFAULT_BOARD_SIZE, redStrategy, blueStrategy, randomSeed);
@@ -75,8 +75,20 @@ public class MineopolyMain {
          * Note that you should only count a win if your strategy scores enough points to win
          *  by the minimum score. Do not count wins as scoring more than RandomStrategy() (which always scores 0)
          */
+        GameEngine gameEngine;
 
-        throw new RuntimeException("Testing win percent not yet implemented"); // TODO: Delete this line
-        //return ((double) numRoundsWonByMinScore) / numTotalRounds; // TODO: Uncomment this line
+        for (int i = 0; i < numTotalRounds; i++) {
+            long randomSeed = System.currentTimeMillis();
+            gameEngine = new GameEngine(boardSize, yourStrategy, randomStrategy, randomSeed);
+            gameEngine.setGuiEnabled(false);
+            gameEngine.runGame();
+
+            if (gameEngine.getRedPlayer().getScore() > gameEngine.getMinScoreToWin()) {
+                numRoundsWonByMinScore++;
+            }
+        }
+
+
+        return ((double) numRoundsWonByMinScore) / numTotalRounds; // TODO: Uncomment this line
     }
 }
