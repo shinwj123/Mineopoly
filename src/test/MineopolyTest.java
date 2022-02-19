@@ -129,6 +129,228 @@ public class MineopolyTest {
     }
 
     @Test
+    public void testNearestchargingStation14() {
+        yourStrategy.initialize(14,7, 100,30000, null,
+                new Point(1,0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY}
+        };
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(), new Point(1,0), new Point(0,0), 0);
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView,economy,1, true));
+    }
+
+    @Test
+    public void testNearestchargingStation20() {
+        yourStrategy.initialize(20,7, 100,30000, null,
+                new Point(1,0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY}
+        };
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(), new Point(1,0), new Point(0,0), 0);
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView,economy,1, true));
+    }
+
+    @Test
+    public void testNearestchargingStation26() {
+        yourStrategy.initialize(26,7, 100,30000, null,
+                new Point(1,0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY}
+        };
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(), new Point(1,0), new Point(0,0), 0);
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView,economy,1, true));
+    }
+
+    @Test
+    public void testNearestchargingStation32() {
+        yourStrategy.initialize(32,7, 100,30000, null,
+                new Point(1,0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY}
+        };
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(), new Point(1,0), new Point(0,0), 0);
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView,economy,1, true));
+    }
+
+    @Test
+    public void testPlayerStandingOnMineral14() {
+        yourStrategy.initialize(14, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MINE, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerStandingOnMineral20() {
+        yourStrategy.initialize(20, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MINE, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerStandingOnMineral26() {
+        yourStrategy.initialize(26, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MINE, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerStandingOnMineral32() {
+        yourStrategy.initialize(32, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MINE, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerInventoryFull14() {
+        yourStrategy.initialize(14, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        InventoryItem item = new InventoryItem(ItemType.RUBY);
+        for (int i = 0; i < 5; i++) {
+            yourStrategy.onReceiveItem(item);
+        }
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerInventoryFull20() {
+        yourStrategy.initialize(20, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        InventoryItem item = new InventoryItem(ItemType.RUBY);
+        for (int i = 0; i < 5; i++) {
+            yourStrategy.onReceiveItem(item);
+        }
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerInventoryFull26() {
+        yourStrategy.initialize(26, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        InventoryItem item = new InventoryItem(ItemType.RUBY);
+        for (int i = 0; i < 5; i++) {
+            yourStrategy.onReceiveItem(item);
+        }
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
+
+    @Test
+    public void testPlayerInventoryFull32() {
+        yourStrategy.initialize(32, 7, 100, 30000, null,
+                new Point(1, 0), true, null);
+
+        InventoryItem item = new InventoryItem(ItemType.RUBY);
+        for (int i = 0; i < 5; i++) {
+            yourStrategy.onReceiveItem(item);
+        }
+
+        TileType[][] boardTileTypes = new TileType[][]{
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.RECHARGE, TileType.RECHARGE, TileType.EMPTY},
+                {TileType.EMPTY, TileType.EMPTY, TileType.EMPTY, TileType.RESOURCE_DIAMOND}
+        };
+
+        PlayerBoardView boardView = new PlayerBoardView(boardTileTypes, new HashMap<>(),
+                new Point(3, 0), new Point(0, 0), 0);
+
+        assertEquals(TurnAction.MOVE_UP, yourStrategy.getTurnAction(boardView, economy, 100, true));
+    }
 
     @After
     public void restoreStreams() {
