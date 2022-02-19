@@ -128,6 +128,7 @@ public class MineopolyTest {
         assertTrue(winPercentage >= 0.99);
     }
 
+    @Test
 
     @After
     public void restoreStreams() {
